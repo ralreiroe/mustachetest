@@ -1,26 +1,31 @@
-// The simplest possible sbt build file is just one line:
 
-scalaVersion := "2.13.1"
-// That is, to create a valid sbt build, all you've got to do is define the
-// version of Scala you'd like your project to use.
+scalaVersion := "2.12.10"
 
-// ============================================================================
 
-// Lines like the above defining `scalaVersion` are called "settings". Settings
-// are key/value pairs. In the case of `scalaVersion`, the key is "scalaVersion"
-// and the value is "2.13.1"
+val akkaVersion           = "2.6.3"
+val akkaHttpVersion       = "10.1.11"
+val typesafeConfigVersion = "1.3.3"
+val log4j2Version         = "2.11.1"
+val alpakkaVersion        = "1.1.2"
 
-// It's possible to define many kinds of settings, such as:
 
 name := "hello-world"
 organization := "ch.epfl.scala"
 version := "1.0"
 
 libraryDependencies ++= Seq(
-  "org.typelevel" %% "cats-core" % "2.0.0",
+  "javax.json"               % "javax.json-api"            % "1.1.4",
+  "org.slf4j"                % "slf4j-api"                 % "1.7.25",
+  "org.apache.logging.log4j" % "log4j-api"                 % log4j2Version,
+  "org.apache.logging.log4j" % "log4j-core"                % log4j2Version % Runtime,
+  "org.apache.logging.log4j" % "log4j-slf4j-impl"          % log4j2Version,
+  "com.typesafe"             % "config"                    % typesafeConfigVersion,
   "com.typesafe.play"        %% "play-json"                % "2.8.1",
   "org.trimou"               % "trimou-core"               % "2.5.0.Final",
   "org.trimou"               % "trimou-extension-gson"     % "2.5.0.Final",
-  "javax.json"               % "javax.json-api"     % "1.1.4",
-  "org.trimou"               % "trimou-extension-json-p"   % "2.5.0.Final"
+  "org.trimou"               % "trimou-extension-json-p"   % "2.5.0.Final",
+  "org.scalatest"            %% "scalatest"                % "3.1.0" % Test,
+  "org.scalamock"            %% "scalamock"                % "4.4.0" % Test,
+  "org.scalacheck"           %% "scalacheck"               % "1.14.3" % Test,
+  "org.scalatestplus"        %% "scalatestplus-scalacheck" % "3.1.0.0-RC2" % Test,
 )
