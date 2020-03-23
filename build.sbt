@@ -23,7 +23,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.play"        %% "play-json"                % "2.8.1",
   "org.trimou"               % "trimou-core"               % "2.5.0.Final",
   "org.trimou"               % "trimou-extension-gson"     % "2.5.0.Final",
-  "org.trimou"               % "trimou-extension-json-p"   % "2.5.0.Final",
+//  "org.trimou"               % "trimou-extension-json-p"   % "2.5.0.Final",
   "org.scalatest"            %% "scalatest"                % "3.1.0" % Test,
   "org.scalamock"            %% "scalamock"                % "4.4.0" % Test,
   "org.scalacheck"           %% "scalacheck"               % "1.14.3" % Test,
