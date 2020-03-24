@@ -23,7 +23,7 @@ object MainDataAsJsonB extends App {
                      |}""".stripMargin
 
   val res: Customer = JsonbBuilder.create().fromJson(jsonString, classOf[Customer])
-  println("xxx" + res)
+  println("xxx" + res) //no error but empty
 
   val compiledMustacheTemplate = MustacheEngineBuilder.newBuilder.build.compileMustache("""Last name: {{lastName}}
                                                                           |Street: {{address.street}}
