@@ -1,6 +1,6 @@
 import java.io.StringReader
 
-import javax.json.{Json, JsonObject, JsonReader}
+import javax.json.{Json, JsonObject, JsonReader, JsonStructure}
 
 //passing a javax.json.JsonObject to compiled template works - substitution yes but with quotes
 //the actual implementation is in org.glassfish.json
@@ -42,7 +42,7 @@ object MainDataAsJsonB extends App {
 
   val jsonReader: JsonReader = Json.createReader(new StringReader(jsonString))
 
-  private val jsonObject: JsonObject = jsonReader.readObject()
+  private val jsonObject: JsonStructure = jsonReader.readObject()
 
   val compiledMustacheTemplate = MustacheEngineBuilder.newBuilder.build.compileMustache("""Last name: {{lastName}}
                                                                           |Street: {{address.street}}
