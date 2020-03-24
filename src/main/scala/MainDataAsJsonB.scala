@@ -5,6 +5,15 @@ import javax.json.{Json, JsonObject, JsonReader}
 //passing a javax.json.JsonObject to compiled template works - substitution yes but with quotes
 //the actual implementation is in org.glassfish.json
 
+
+//https://javaee.github.io/jsonp/getting-started.html
+//the libraries here are json-api and glassfish.javax.json (I thought this was Json *B*?)
+
+
+//ALLES GUT ERKLAERT: APIs, reference implmentations. json-p = parsing/streaming/deserialization. json-b: mapping to own classes
+//
+// http://www.tutego.de/blog/javainsel/2018/07/json-serialisierung-mit-jsr-353-374-und-jsr-367/
+
 object MainDataAsJsonB extends App {
   import org.trimou.engine.MustacheEngineBuilder
 
