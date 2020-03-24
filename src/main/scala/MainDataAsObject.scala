@@ -1,4 +1,3 @@
-import javax.json.bind.JsonbBuilder
 
 object MainDataAsObject extends App {
   import org.trimou.engine.MustacheEngineBuilder
