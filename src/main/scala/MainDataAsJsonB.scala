@@ -4,17 +4,26 @@ object MainDataAsJsonB extends App {
   import org.trimou.engine.MustacheEngineBuilder
 
 
-  case class Customer(firstName: String, lastName: String, age: Int)
+  case class Customer(firstName: String, lastName: String, age: Int) {
+
+    //required - otherwise Exception in thread "main" javax.json.bind.JsonbException: Can't create instance of a class: class MainDataAsJsonB$Customer, No default constructor found.
+    def this() = {
+      this("", "", 0)
+    }
+  }
+
+
+  println("****" + new Customer("Ralf", "Oenning", 30))
+
   val jsonString = """
 {
                      |    "firstName": "Jan",
                      |    "lastName": "Novy",
-                     |    "age": 30,
+                     |    "age": 30
                      |}""".stripMargin
 
   val res: Customer = JsonbBuilder.create().fromJson(jsonString, classOf[Customer])
-  //JSON Binding provider org.eclipse.yasson.JsonBindingProvider not found
-  println(res)
+  println("xxx" + res)
 
   val compiledMustacheTemplate = MustacheEngineBuilder.newBuilder.build.compileMustache("""Last name: {{lastName}}
                                                                           |Street: {{address.street}}

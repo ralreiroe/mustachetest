@@ -26,6 +26,7 @@ libraryDependencies ++= Seq(
 //  "org.trimou"               % "trimou-extension-json-p"   % "2.5.0.Final",
   "javax.json.bind" % "javax.json.bind-api" % "1.0",
   "org.eclipse" % "yasson" % "1.0.3",
+  "org.glassfish" % "javax.json" % "1.1.4",
   "org.scalatest"            %% "scalatest"                % "3.1.0" % Test,
   "org.scalamock"            %% "scalamock"                % "4.4.0" % Test,
   "org.scalacheck"           %% "scalacheck"               % "1.14.3" % Test,
